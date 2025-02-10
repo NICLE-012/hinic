@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadMe Now</title>
+    <script>
+      alert('Silakan menekan OK di bawah untuk memunculkan isi halaman ini');   
+    </script>
+    <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling umum untuk body */
+        .body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Styling untuk navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+        }
+
+
+        .navbar .logo img {
+            justify-content: space-between;
+            height: 100px;
+            width: auto;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ff9900;
+        }
+
+        /* Styling untuk section */
+        .section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .section h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+        }
+
+        /* Styling untuk daftar buku */
+        .book-list {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .book-item {
+            position: relative;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            width: 30%;
+            text-align: center;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            /* Make the book item background slightly transparent */
+            overflow: hidden;
+        }
+
+        .book-item:hover {
+            transform: scale(1.05);
+        }
+
+        /* Add the blurred background behind each book item */
+        .book-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -1;
+        }
+
+        .book-item.pulang::before {
+            background-image: url('C:/Users/LOQ 30/OneDrive/Documents/khusus VS/pulang.jpg');
+            /* Gambar untuk buku 'Pulang' */
+        }
+
+        .book-item.pergi::before {
+            background-image: url('C:/Users/LOQ 30/OneDrive/Documents/khusus VS/pergi.jpg');
+            /* Gambar untuk buku 'Pergi' */
+        }
+
+        .book-item.pulang-pergi::before {
+            background-image: url('C:/Users/LOQ 30/OneDrive/Documents/khusus VS/pulang pergi.jpg');
+            /* Gambar untuk buku 'Pulang Pergi' */
+        }
+
+        .book-item.hujan::before {
+            background-image: url('C:/Users/LOQ 30/OneDrive/Documents/khusus VS/hujan.jpg');
+            /* Gambar untuk buku 'Hujan' */
+        }
+
+        .book-item.laut-bercerita::before {
+            background-image: url('C:/Users/LOQ 30/OneDrive/Documents/khusus VS/laut bercerita.jpg');
+            /* Gambar untuk buku 'Laut Bercerita' */
+        }
+
+        .book-item.malioboro::before {
+            background-image: url('C:/Users/LOQ 30/OneDrive/Documents/khusus VS/malioboro.jpg');
+            /* Gambar untuk buku 'Malioboro' */
+        }
+
+        .book-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .book-item a h3 {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+
+        /* Styling untuk tombol Read Now */
+        .read-now-btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #ff9900;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .read-now-btn:hover {
+            background-color: #ff7700;
+        }
+
+        /* Styling untuk gambar buku */
+        .book-item img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        
+    </style>
+
+</head>
+
+<body class="body">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Web" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#profile" class="nav-link">Profile</a></li>
+        </ul>
+        
+    </nav>
+
+    <!-- Content -->
+    <section id="home" class="section">
+        <h1>Welcome to ReadMe Now</h1>
+        <p>Temukan berbagai macam buku menarik di sini. Klik pada judul buku untuk membaca lebih lanjut.</p>
+
+        <div class="book-list">
+            <div class="book-item pulang">
+                <a href="link-pdf-buku1.pdf" target="_blank">
+                    <img src="C:/Users/LOQ 30/OneDrive/Documents/khusus VS/pulang.jpg" alt="Pulang - Tereliye" />
+                    <h3>Pulang - Tereliye</h3>
+                </a>
+                <a href="C:\Users\LOQ 30\OneDrive\Documents\khusus VS\Pulang by Tere Liye.pdf" target="blank" <button
+                    class="read-now-btn">Read Now</button>
+                </a>
+            </div>
+            <div class="book-item pergi">
+                <a href="link-pdf-buku2.pdf" target="_blank">
+                    <img src="C:/Users/LOQ 30/OneDrive/Documents/khusus VS/pergi.jpg" alt="Pergi - Tereliye" />
+                    <h3>Pergi - Tereliye</h3>
+                </a>
+                <button class="read-now-btn">Read Now</button>
+            </div>
+            <div class="book-item pulang-pergi">
+                <a href="link-pdf-buku3.pdf" target="_blank">
+                    <img src="C:/Users/LOQ 30/OneDrive/Documents/khusus VS/pulang pergi.jpg"
+                        alt="Pulang Pergi - Tereliye" />
+                    <h3>Pulang Pergi - Tereliye</h3>
+                </a>
+                <button class="read-now-btn">Read Now</button>
+            </div>
+            <div class="book-item hujan">
+                <a href="link-pdf-buku4.pdf" target="_blank">
+                    <img src="C:/Users/LOQ 30/OneDrive/Documents/khusus VS/hujan.jpg" alt="Hujan - Tereliye" />
+                    <h3>Hujan - Tereliye</h3>
+                </a>
+                <button class="read-now-btn">Read Now</button>
+            </div>
+            <div class="book-item laut-bercerita">
+                <a href="link-pdf-buku4.pdf" target="_blank">
+                    <img src="C:\Users\LOQ 30\OneDrive\Documents\khusus VS\laut bercerita'.jpg"
+                        alt="Laut Bercerita - Laila Salikha" />
+                    <h3>Laut Bercerita - Laila Salikha</h3>
+                </a>
+                <button class="read-now-btn">Read Now</button>
+            </div>
+            <div class="book-item malioboro">
+                <a href="link-pdf-buku4.pdf" target="_blank">
+                    <img src="C:/Users/LOQ 30/OneDrive/Documents/khusus VS/malioboro.jpg" alt="Malioboro - Skysphire" />
+                    <h3>Malioboro - Skysphire</h3>
+                </a>
+                <button class="read-now-btn">Read Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="profile" class="section">
+        <h2>Profil</h2>
+        <p>Informasi tentang website ini dan pengelolanya &copy; -NICLE.</p>
+    </section>
+</body>
+
+</html>
