@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReadMe Now</title>
+    
+    <style>
+        /* Reset default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styling umum untuk body */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Styling untuk navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            height: 70px; /* Tinggi navbar diperbaiki */
+        }
+
+        .navbar .logo img {
+            height: 50px; /* Logo lebih kecil biar proporsional */
+            width: auto;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            padding: 8px 12px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ff9900;
+        }
+
+        /* Styling untuk profil */
+        .profile-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            margin-top: 20px;
+        }
+
+        .profile-container h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .profile-info {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .logout-btn {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .logout-btn:hover {
+            background-color: #cc0000;
+        }
+
+        /* Responsif untuk layar kecil */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            .navbar .logo img {
+                height: 40px;
+            }
+
+            .navbar .nav-links {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+            }
+
+            .navbar .nav-links li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Web" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="#" onclick="checkLogin()">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile-container">
+        <h2>Profil Pengguna</h2>
+        <p class="profile-info"><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p class="profile-info"><strong>Nama Pengguna:</strong> <span id="userName"></span></p>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <script>
+        function checkLogin() {
+            if (localStorage.getItem("isLoggedIn") === "true") {
+                window.location.href = "profile.html";
+            } else {
+                alert("Silakan login terlebih dahulu.");
+                window.location.href = "login.html";
+            }
+        }
+
+        // Cek apakah user sudah login
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html"; // Arahkan ke login kalau belum login
+        }
+
+        // Tampilkan data user yang sudah login
+        document.getElementById("userEmail").innerText = localStorage.getItem("userEmail");
+        document.getElementById("userName").innerText = localStorage.getItem("userName");
+
+        function logout() {
+            localStorage.removeItem("isLoggedIn");
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userName");
+            window.location.href = "index.html"; // Kembali ke halaman utama setelah logout
+        }
+    </script>
+
+</body>
+
+</html>
