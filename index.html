@@ -123,7 +123,7 @@
         }
 
         .book-item.pergi::before {
-            background-image: url(pergi.jpg);
+            background-image: url(download.jpg);
             /* Gambar untuk buku 'Pergi' */
         }
 
@@ -187,6 +187,19 @@
         
     </style>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let profileLink = document.getElementById("profile-link");
+
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            profileLink.href = "profile.html"; // Bisa akses profil kalau sudah login
+        } else {
+            profileLink.href = "login.html"; // Arahkan ke login kalau belum login
+        }
+    });
+</script>
+
+
 </head>
 
 <body class="body">
@@ -197,9 +210,21 @@
         </div>
         <ul class="nav-links">
             <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#profile" class="nav-link">Profile</a></li>
-        </ul>
-        
+            <li><a href="#" onclick="checkLogin()">Profile</a></li>
+
+            <script>
+                function checkLogin() {
+                    if (localStorage.getItem("isLoggedIn") === "true") {
+                        window.location.href = "profile.html";
+                    } else {
+                        alert("Silakan login terlebih dahulu.");
+                        window.location.href = "login.html";
+                    }
+                }
+            </script>
+            
+
+        </ul>  
     </nav>
 
     <!-- Content -->
@@ -213,17 +238,21 @@
                     <img src="pulang.jpg" alt="Pulang - Tereliye" />
                     <h3>Pulang - Tereliye</h3>
                 </a>
-                <a href="C:\Users\LOQ 30\OneDrive\Documents\khusus VS\Pulang by Tere Liye.pdf" target="blank" <button
+                <a href="C:\Users\LOQ 30\OneDrive\Documents\khusus VS\Pulang by Tere Liye.pdf" target="blank"> <button
                     class="read-now-btn">Read Now</button>
                 </a>
             </div>
+
+
             <div class="book-item pergi">
                 <a href="link-pdf-buku2.pdf" target="_blank">
-                    <img src="pergi.jpg" alt="Pergi - Tereliye" />
+                    <img src="download.jpg" alt="Pergi - Tereliye" />
                     <h3>Pergi - Tereliye</h3>
                 </a>
-                <button class="read-now-btn">Read Now</button>
+                <a href="https://drive.google.com/file/d/1U7VZveNEwvju_6-E3T9eBcYmsSuhg-vu/view?usp=sharing" target="blank"> <button class="read-now-btn">Read Now</button> </a>
             </div>
+
+
             <div class="book-item pulang-pergi">
                 <a href="link-pdf-buku3.pdf" target="_blank">
                     <img src="pulang pergi.jpg"
@@ -232,6 +261,8 @@
                 </a>
                 <button class="read-now-btn">Read Now</button>
             </div>
+
+
             <div class="book-item hujan">
                 <a href="link-pdf-buku4.pdf" target="_blank">
                     <img src="hujan.jpg" />
@@ -239,14 +270,18 @@
                 </a>
                 <button class="read-now-btn">Read Now</button>
             </div>
+
+
             <div class="book-item laut-bercerita">
                 <a href="link-pdf-buku4.pdf" target="_blank">
-                    <img src="laut bercerita'.jpg"
+                    <img src="laut bercerita.jpg"
                         alt="Laut Bercerita - Laila Salikha" />
                     <h3>Laut Bercerita - Laila Salikha</h3>
                 </a>
                 <button class="read-now-btn">Read Now</button>
             </div>
+
+
             <div class="book-item malioboro">
                 <a href="link-pdf-buku4.pdf" target="_blank">
                     <img src="malioboro.jpg" alt="Malioboro - Skysphire" />
@@ -254,6 +289,8 @@
                 </a>
                 <button class="read-now-btn">Read Now</button>
             </div>
+
+
         </div>
     </section>
 
