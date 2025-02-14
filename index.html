@@ -6,14 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReadMe Now</title>
     <script>
-        alert('Silakan menekan OK di bawah untuk memunculkan isi halaman ini');   
+      alert('Silakan menekan OK di bawah untuk memunculkan isi halaman ini');   
     </script>
     <style>
-        .book-item {
-                width: 90%;
-                /* Biar lebarnya hampir penuh di layar HP */
-            }
-        }
+@media (max-width: 768px) {
+    .book-list {
+        flex-direction: column; /* Susun ke bawah */
+        align-items: center; /* Tengahin kontennya */
+    }
+
+    .book-item {
+        width: 90%; /* Biar lebarnya hampir penuh di layar HP */
+    }
+}
 
 
         /* Reset default styling */
@@ -190,19 +195,21 @@
             border-radius: 8px;
             margin-bottom: 15px;
         }
+
+        
     </style>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let profileLink = document.getElementById("profile-link");
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let profileLink = document.getElementById("profile-link");
 
-            if (localStorage.getItem("isLoggedIn") === "true") {
-                profileLink.href = "profile.html"; // Bisa akses profil kalau sudah login
-            } else {
-                profileLink.href = "login.html"; // Arahkan ke login kalau belum login
-            }
-        });
-    </script>
+        if (localStorage.getItem("isLoggedIn") === "true") {
+            profileLink.href = "profile.html"; // Bisa akses profil kalau sudah login
+        } else {
+            profileLink.href = "login.html"; // Arahkan ke login kalau belum login
+        }
+    });
+</script>
 
 
 </head>
@@ -228,9 +235,9 @@
                     }
                 }
             </script>
+            
 
-
-        </ul>
+        </ul>  
     </nav>
 
     <!-- Content -->
@@ -244,8 +251,8 @@
                     <img src="pulang.jpg" alt="Pulang - Tereliye" />
                     <h3>Pulang - Tereliye</h3>
                 </a>
-                <a href="https://drive.google.com/file/d/1CQtm_7j69CU86GQZziBBk_jp6piaAo0S/view?usp=sharing"
-                    target="blank"> <button class="read-now-btn">Read Now</button>
+                <a href="https://drive.google.com/file/d/1CQtm_7j69CU86GQZziBBk_jp6piaAo0S/view?usp=sharing" target="blank"> <button
+                    class="read-now-btn">Read Now</button>
                 </a>
             </div>
 
@@ -255,14 +262,14 @@
                     <img src="download.jpg" alt="Pergi - Tereliye" />
                     <h3>Pergi - Tereliye</h3>
                 </a>
-                <a href="https://drive.google.com/file/d/1U7VZveNEwvju_6-E3T9eBcYmsSuhg-vu/view?usp=sharing"
-                    target="blank"> <button class="read-now-btn">Read Now</button> </a>
+                <a href="https://drive.google.com/file/d/1U7VZveNEwvju_6-E3T9eBcYmsSuhg-vu/view?usp=sharing" target="blank"> <button class="read-now-btn">Read Now</button> </a>
             </div>
 
 
             <div class="book-item pulang-pergi">
                 <a href="link-pdf-buku3.pdf" target="_blank">
-                    <img src="pulang pergi.jpg" alt="Pulang Pergi - Tereliye" />
+                    <img src="pulang pergi.jpg"
+                        alt="Pulang Pergi - Tereliye" />
                     <h3>Pulang Pergi - Tereliye</h3>
                 </a>
                 <button class="read-now-btn">Read Now</button>
@@ -280,7 +287,8 @@
 
             <div class="book-item laut-bercerita">
                 <a href="link-pdf-buku4.pdf" target="_blank">
-                    <img src="laut bercerita.jpg" alt="Laut Bercerita - Laila Salikha" />
+                    <img src="laut bercerita.jpg"
+                        alt="Laut Bercerita - Laila Salikha" />
                     <h3>Laut Bercerita - Laila Salikha</h3>
                 </a>
                 <button class="read-now-btn">Read Now</button>
