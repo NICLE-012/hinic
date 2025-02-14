@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - ReadMe Now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+        }
+
+        .navbar .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .navbar .nav-links li {
+            margin-left: 20px;
+        }
+
+        .navbar .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            transition: color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            color: #ff9900;
+        }
+
+        .about-container {
+            width: 60%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .about-container h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .about-container p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .about-container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo Web" />
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="profile.html" onclick="checkLogin()">Profile</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-container">
+        <h2>Tentang Kami</h2>
+        <p>ReadMe Now adalah platform untuk para pecinta buku yang ingin menikmati berbagai karya literasi secara digital.
+            Kami menyediakan akses mudah ke berbagai buku menarik dan memberikan pengalaman membaca yang nyaman.
+            Bergabunglah dengan komunitas kami dan temukan buku favoritmu!</p>
+    </div>
+
+    <script>
+        function checkLogin() {
+            if (localStorage.getItem("isLoggedIn") === "true") {
+                window.location.href = "profile.html";
+            } else {
+                alert("Silakan login terlebih dahulu.");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+</body>
+
+</html>
